@@ -1,5 +1,10 @@
-# test_app.py
-import pytest
+import sys
+import os
+import pytest 
+
+# root directory 
+sys.path.insert(0, r'C:\Users\NickJ\Python_CICD')
+
 from app import multiply, divide
 
 def test_multiply():
