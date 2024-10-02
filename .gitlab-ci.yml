@@ -1,0 +1,23 @@
+image: python:3.9
+
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+    - pip install -r requirements.txt
+    - pytest
+
+deploy:
+  stage: deploy
+  script:
+    - |
+      echo "Deploying application..."
+      git config --global user.email "your-email@example.com"
+      git config --global user.name "Your Name"
+      git remote add github https://oauth2:${GITHUB_TOKEN}@github.com/DigitalSpaceCowboy/Python_CICD.git
+      git push github main
+  only:
+    - main
