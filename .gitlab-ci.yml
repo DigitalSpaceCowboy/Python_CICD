@@ -15,8 +15,8 @@ deploy:
   script:
     - |
       echo "Deploying application..."
-      git config --global user.email "your-email@example.com"
-      git config --global user.name "Your Name"
+      git config --global user.email 
+      git config --global user.name 
       git remote add github https://oauth2:${GITHUB_TOKEN}@github.com/DigitalSpaceCowboy/Python_CICD.git
       git push github main
   only:
